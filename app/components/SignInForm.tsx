@@ -47,7 +47,8 @@ const SignInForm = (props: Props) => {
       return;
     }
     toast.success("Welcome Next AppAthentication");
-    router.push(props.callbackUrl ? props.callbackUrl : "/");
+    // router.push(props.callbackUrl ? props.callbackUrl : "/");
+    router.push(props.callbackUrl ? "/" : "/");
   };
 
   return (
