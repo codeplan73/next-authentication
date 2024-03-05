@@ -46,7 +46,7 @@ const SignInForm = (props: Props) => {
       toast.error(result?.error);
       return;
     }
-    toast.success("Welcome To Sakura Dev Channel");
+    toast.success("Welcome Next AppAthentication");
     router.push(props.callbackUrl ? props.callbackUrl : "/");
   };
 

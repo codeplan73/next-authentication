@@ -7,6 +7,7 @@ import {
   Link,
   Button,
 } from "@nextui-org/react";
+import SigninButton from "./SigninButton";
 // import { AcmeLogo } from "./AcmeLogo.jsx";
 
 export default function App() {
@@ -34,13 +35,16 @@ export default function App() {
         </NavbarItem>
       </NavbarContent>
       <NavbarContent justify="end">
-        <NavbarItem className="hidden lg:flex">
+        {/* <NavbarItem className="hidden lg:flex">
           <Link href="/auth/signin">Login</Link>
         </NavbarItem>
         <NavbarItem>
           <Button as={Link} color="primary" href="/auth/signup" variant="flat">
             Sign Up
           </Button>
+        </NavbarItem> */}
+        <NavbarItem>
+          <SigninButton />
         </NavbarItem>
       </NavbarContent>
     </Navbar>

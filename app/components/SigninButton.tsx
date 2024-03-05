@@ -6,6 +6,7 @@ import Link from "next/link";
 
 const SigninButton = () => {
   const { data: session } = useSession();
+  console.log({ session });
 
   return (
     <div className="flex items-center gap-2">
@@ -13,7 +14,7 @@ const SigninButton = () => {
         <>
           <Link
             href={"/profile"}
-          >{`${session.user.firstname} ${session.user.lastname}`}</Link>
+          >{`${session.user.firstName} ${session.user.lastName}`}</Link>
           <Link
             className="tex-sky-500 hover:text-sky-600 transition-colors"
             href={"/api/auth/signout"}
