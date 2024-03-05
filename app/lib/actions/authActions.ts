@@ -5,7 +5,7 @@ import { User } from "@prisma/client";
 import * as bcrypt from "bcrypt";
 import {
   compileActivationTemplate,
-  compileResetPassTemplate,
+  // compileResetPassTemplate,
   sendMail,
 } from "../mail";
 import { signJwt, verifyJwt } from "../jwt";
@@ -24,9 +24,10 @@ export async function registerUser(
   // const jwtUserId = signJwt({
   //   id: result.id,
   // });
-  // const activationUrl = `${process.env.NEXTAUTH_URL}/auth/activation/${jwtUserId}`;
-  // const body = compileActivationTemplate(user.firstName, activationUrl);
-  // await sendMail({ to: user.email, subject: "Activate Your Account", body });
+
+  const activationUrl = `${process.env.NEXTAUTH_URL}/auth/activation/${result.id}`;
+  const body = compileActivationTemplate(user.firstName, activationUrl);
+  await sendMail({ to: user.email, subject: "Activate Your Account", body });
   return result;
 }
 
